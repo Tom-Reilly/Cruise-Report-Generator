@@ -1,0 +1,60 @@
+---
+output: word_document
+params:
+  survey: NA
+  schedDepDate: NA
+  schedArrDate: NA
+  actDepDate: NA
+  actArrDate: NA
+  halfDate: NA
+  personnel: !r NA
+  depPort: NA
+  halfPort: NA
+  arrPort: NA
+  objNum: NA
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Not to be cited without reference to the Marine Laboratory, Aberdeen 
+
+MRV Scotia 
+
+Cruise `r params$survey`
+
+***
+
+## Dates
+
+#### Departure  
+**Scheduled Date:** `r params$schedDepDate`  
+**Actual Date:** `r params$actDepDate`
+
+#### Arrival  
+**Scheduled Date:** `r params$schedArrDate`  
+**Actual Date:** `r params$actArrDate`    
+
+#### Half Landing  
+**Date:** `r params$halfDate`
+
+***
+
+## Ports
+**Departure Port:** `r params$depPort`  
+**Half Landing Port:** `r params$halfPort`  
+**Arrival Port:** `r params$arrPort` 
+
+***
+
+## Personnel
+```{r, echo=FALSE, results = 'asis'} 
+cat(unlist(params$personnel),sep="  \n")
+```
+
+## Objectives
+
+`r params$objNum`
+
+
